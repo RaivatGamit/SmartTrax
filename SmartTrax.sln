@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartTrax.Core", "SmartTrax.Core\SmartTrax.Core.csproj", "{27786207-E5E7-4E73-9DFB-8C648DAF9C94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartTrax.Application", "SmartTrax.Application\SmartTrax.Application.csproj", "{EB673A60-E86D-4F18-A514-70B40139FBBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartTrax.Infrastructure", "SmartTrax.Infrastructure\SmartTrax.Infrastructure.csproj", "{3890DDC3-65E6-41CE-9A66-E29EE4A574F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartTrax.Api", "SmartTrax.Api\SmartTrax.Api.csproj", "{86A93AA7-BD38-40FE-A9FB-D90A1B301A69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27786207-E5E7-4E73-9DFB-8C648DAF9C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27786207-E5E7-4E73-9DFB-8C648DAF9C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27786207-E5E7-4E73-9DFB-8C648DAF9C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27786207-E5E7-4E73-9DFB-8C648DAF9C94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB673A60-E86D-4F18-A514-70B40139FBBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB673A60-E86D-4F18-A514-70B40139FBBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB673A60-E86D-4F18-A514-70B40139FBBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB673A60-E86D-4F18-A514-70B40139FBBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3890DDC3-65E6-41CE-9A66-E29EE4A574F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3890DDC3-65E6-41CE-9A66-E29EE4A574F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3890DDC3-65E6-41CE-9A66-E29EE4A574F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3890DDC3-65E6-41CE-9A66-E29EE4A574F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86A93AA7-BD38-40FE-A9FB-D90A1B301A69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86A93AA7-BD38-40FE-A9FB-D90A1B301A69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86A93AA7-BD38-40FE-A9FB-D90A1B301A69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86A93AA7-BD38-40FE-A9FB-D90A1B301A69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
