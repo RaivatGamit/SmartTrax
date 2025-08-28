@@ -30,8 +30,8 @@ public class UserRepository: IUserRepository
     public async Task<int> CreateAsync(User user)
     {
         const string sql = @"
-                INSERT INTO Users (Id, Username, Email, PasswordHash, Role)
-                VALUES (@Id, @Username, @Email, @PasswordHash, @Role);
+                INSERT INTO Users ( Username, Email, PasswordHash, Role)
+                VALUES ( @Username, @Email, @PasswordHash, @Role);
             ";
         return await _db.ExecuteAsync(sql, user);
     }

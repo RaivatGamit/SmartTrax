@@ -43,17 +43,5 @@ namespace SmartTrax.Api.Controllers
                 return Unauthorized();
             }
         }
-
-        // Example of protected endpoint
-        [Authorize]
-        [HttpGet("me")]
-        public IActionResult Me()
-        {
-            return Ok(new
-            {
-                Username = User.Identity?.Name,
-                Claims = User.Claims.Select(c => new { c.Type, c.Value })
-            });
-        }
     }
 }
