@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -38,10 +39,31 @@ namespace SmartTrax.Api.Controllers
                 var res = await _authService.LoginAsync(dto);
                 return Ok(res);
             }
-            catch (UnauthorizedAccessException)
+            catch (UnauthorizedAccessException ex)
             {
-                return Unauthorized();
+                return Unauthorized(ex.Message);
             }
+        }
+
+        [HttpGet("me")]
+        [Authorize]
+        public IActionResult Me()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var username = User.Identity?.Name;
+            var email = User.FindFirstValue(ClaimTypes.Email);
+
+            if (userId == null)
+                return Unauthorized();
+
+            // You can fetch more user details from your database if needed
+
+            return Ok(new
+            {
+                userId,
+                username,
+                email
+            });
         }
     }
 }

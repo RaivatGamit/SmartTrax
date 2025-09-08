@@ -29,7 +29,7 @@ public static class DependencyInjection
     }
     public static IServiceCollection AddJwtAuthentication(this IServiceCollection services, IConfiguration configuration)
     {
-        var jwtSettings = configuration.GetSection("JwtSettings");
+        var jwtSettings = configuration.GetSection("Jwt");
         var issuer = jwtSettings["Issuer"];
         var audience = jwtSettings["Audience"];
         var key = jwtSettings["Key"];
