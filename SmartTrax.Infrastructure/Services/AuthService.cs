@@ -38,7 +38,7 @@ public class AuthService : IAuthService
 
         await _userRepository.CreateAsync(user);
 
-        var token = _jwtGenerator.GenerateToken(user.Id.ToString(), user.Username, user.Role);
+        var token = _jwtGenerator.GenerateToken(user);
 
         return new AuthResponseDto
         {
@@ -55,7 +55,7 @@ public class AuthService : IAuthService
         if (user == null || !PasswordHelper.Verify(dto.Password, user.PasswordHash))
             throw new UnauthorizedAccessException("Invalid credentials");
 
-        var token = _jwtGenerator.GenerateToken(user.Id.ToString(), user.Username, user.Role);
+        var token = _jwtGenerator.GenerateToken(user);
 
         return new AuthResponseDto
         {

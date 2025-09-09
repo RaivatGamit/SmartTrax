@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using SmartTrax.Application.Interfaces;
 using Microsoft.Extensions.Configuration;
+using SmartTrax.Core.Entities;
 
 namespace SmartTrax.Infrastructure.Security;
 
@@ -22,13 +23,14 @@ public class JwtTokenGenerator : IJwtTokenGenerator
         _expiryMinutes = int.TryParse(configuration["Jwt:ExpiryMinutes"], out var m) ? m : 60;
     }
 
-    public string GenerateToken(string userId, string username, string role)
+    public string GenerateToken(User user)
     {
         var claims = new[]
         {
-                new Claim(JwtRegisteredClaimNames.Sub, userId),
-                new Claim(ClaimTypes.Name, username),
-                new Claim(ClaimTypes.Role, role),
+                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+                new Claim(ClaimTypes.Name, user.Username),
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Role, user.Role),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
